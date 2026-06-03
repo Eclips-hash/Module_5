@@ -89,25 +89,25 @@ The notebook is organised into 20 numbered cells. Each has a short markdown narr
 
 | Cell | Purpose | Maps to report |
 | :---- | :---- | :---- |
-| 1 | Setup, imports, seed (42), `OUTPUT_DIR` | §2.5 |
-| 2 | CSV sanity checks; recode APACHE-IVa missingness; mortality by ICU type | §3.1 |
-| 3 | Feature engineering: range, deterioration, comorbidity count, missingness flags | §2.2 |
-| 4 | Stratified 80:20 train/test split (joint outcome × ICU type) | §2.3 |
-| 5 | APACHE-IVa benchmark | §3.2 |
-| 6 | Logistic regression baseline (class-weighted) | §3.2 |
-| 7 | Global XGBoost with `RandomizedSearchCV` | §2.3, §3.2 |
-| 8 | Specialist XGBoosts with minimum-iteration safeguard | §2.3, §3.5 |
-| 9 | Probability calibration of the global XGBoost (isotonic) | §2.4, §3.2 |
-| 10 | XGBoost seed stability check | §3.8 |
-| 11 | Paired bootstrap 95% CIs across all five models | §2.5, §3.2 |
+| 1 | Setup, imports, seed (42), `OUTPUT_DIR` | 2.5 |
+| 2 | CSV sanity checks; recode APACHE-IVa missingness; mortality by ICU type | 3.1 |
+| 3 | Feature engineering: range, deterioration, comorbidity count, missingness flags | 2.2 |
+| 4 | Stratified 80:20 train/test split (joint outcome × ICU type) | 2.3 |
+| 5 | APACHE-IVa benchmark | 3.2 |
+| 6 | Logistic regression baseline (class-weighted) | 3.2 |
+| 7 | Global XGBoost with `RandomizedSearchCV` | 2.3, 3.2 |
+| 8 | Specialist XGBoosts with minimum-iteration safeguard | 2.3, 3.5 |
+| 9 | Probability calibration of the global XGBoost (isotonic) | 2.4, 3.2 |
+| 10 | XGBoost seed stability check | 3.8 |
+| 11 | Paired bootstrap 95% CIs across all five models | 2.5, 3.2 |
 | 12 | Headline tables → CSV outputs | Tables 1, 1b, 2 |
-| 13 | ROC, precision–recall, and calibration plots | Figure 1 |
-| 14 | Threshold metrics at sensitivity ≈ 0.85 | §3.3, Table 2 |
-| 15 | Decision-curve analysis | §3.4, Figure 2 |
-| 16 | Per-ICU forest plot | §3.5, Figure 3 |
-| 17 | SHAP attribution (TreeExplainer on the calibrated model) | §3.6, Figure 4 |
-| 18 | Subgroup-fairness audit (ethnicity, gender) | §3.7, Table 4 |
-| 19 | Multi-seed logistic regression stability | §3.8 |
+| 13 | ROC, precision-recall, and calibration plots | Figure 1 |
+| 14 | Threshold metrics at sensitivity = 0.85 | 3.3, Table 2 |
+| 15 | Decision-curve analysis | 3.4, Figure 2 |
+| 16 | Per-ICU forest plot | 3.5, Figure 3 |
+| 17 | SHAP attribution (TreeExplainer on the calibrated model) | 3.6, Figure 4 |
+| 18 | Subgroup-fairness audit (ethnicity, gender) | 3.7, Table 4 |
+| 19 | Multi-seed logistic regression stability | 3.8 |
 | 20 | Save all numerical results to a single `results_summary.json` | — |
 
 ---
@@ -145,29 +145,29 @@ For the assessor's convenience, here is where each report-content item from the 
 
 | Descriptor item | Location |
 | :---- | :---- |
-| Healthcare problem and research question | Report §1.1, §1.4 |
-| Justification for the choice of dataset | Report §1.4, §2.1 |
-| Background on ML relevance to the problem | Report §1.1, §1.2 |
-| Data preparation and preprocessing | Report §2.1, §2.2; notebook Cells 2–3 |
-| Related ML approaches | Report §1.2 |
-| Feature engineering | Report §2.2; notebook Cell 3 |
-| Justification for the choice of algorithms | Report §2.3 |
-| Model selection strategy | Report §2.3, §2.4 |
-| Parameter tuning / optimisation | Report §2.3; notebook Cell 7 |
-| Modelling pipeline rationale | Report §2.3–§2.5 |
-| Stability across seeds or folds | Report §3.8; notebook Cells 10, 19 |
+| Healthcare problem and research question | Report 1.1, 1.4 |
+| Justification for the choice of dataset | Report 1.4, 2.1 |
+| Background on ML relevance to the problem | Report 1.1, 1.2 |
+| Data preparation and preprocessing | Report 2.1, 2.2; notebook Cells 2–3 |
+| Related ML approaches | Report 1.2 |
+| Feature engineering | Report 2.2; notebook Cell 3 |
+| Justification for the choice of algorithms | Report 2.3 |
+| Model selection strategy | Report 2.3, 2.4 |
+| Parameter tuning / optimisation | Report 2.3; notebook Cell 7 |
+| Modelling pipeline rationale | Report 2.3–2.5 |
+| Stability across seeds or folds | Report 3.8; notebook Cells 10, 19 |
 
 **Part 2 — Model evaluation and interpretation (40%):**
 
 | Descriptor item | Location |
 | :---- | :---- |
-| Performance metrics | Report §2.5, §3.2 |
-| Model comparison | Report §3.2, §3.5; Tables 1–3; Figure 3 |
-| Strengths and limitations | Report §4.3 |
-| Healthcare-context interpretation | Report §4.1, §4.2 |
-| Generalisability, bias, fairness, transparency, explainability | Report §3.6, §3.7, §4.4 |
-| Trade-offs (interpretability, computational cost) | Report §4.1, §4.3 |
-| Ethical reflection | Report §4.4 |
+| Performance metrics | Report 2.5, 3.2 |
+| Model comparison | Report 3.2, 3.5; Tables 1–3; Figure 3 |
+| Strengths and limitations | Report 4.3 |
+| Healthcare-context interpretation | Report 4.1, 4.2 |
+| Generalisability, bias, fairness, transparency, explainability | Report 3.6, 3.7, 4.4 |
+| Trade-offs (interpretability, computational cost) | Report 4.1, 4.3 |
+| Ethical reflection | Report 4.4 |
 
 ---
 

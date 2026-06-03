@@ -10,6 +10,15 @@ The Module 5 submission has three components, of which this repository is one:
 2. **Report**   
 3. **GitHub repository** (https://github.com/Eclips-hash/Module\_5)
 
+# Abstract
+### Background.
+APACHE-IVa is a frozen 2006 logistic regression fit to US-only data with no unit-specific adaptation. Modern ML on the same first-24-hour features admits two competing strategies: a global model that learns unit structure through ICU type as a feature, or specialist models with a separate decision boundary per ICU at the cost of an eight-fold smaller training sample. Whether either beats APACHE-IVa on a large multinational cohort, and whether specialisation pays off, has not been settled on the GOSSIS dataset.
+### Methods. 
+On the WiDS 2020 / GOSSIS dataset (91,713 ICU stays, 8.6% mortality), I compared APACHE-IVa, class-weighted logistic regression, a tuned isotonically calibrated global XGBoost, and eight specialist XGBoosts. AUC-PR with paired-bootstrap CIs (n = 16,288) was primary, supplemented by decision-curve analysis, threshold metrics, SHAP, and a subgroup audit.
+Results. The global XGBoost achieved AUC-PR 0.585 (95% CI 0.560–0.611), exceeding APACHE-IVa (0.456) and specialists (0.528). Isotonic calibration halved Brier from 0.102 to 0.053 and delivered the highest net benefit across clinically relevant thresholds (NNE 3.78 vs APACHE-IVa 4.59). No specialist outperformed the global model.
+### Conclusion. 
+A single calibrated global XGBoost outperformed both APACHE-IVa and specialist models. External validation on a non-US cohort is needed.
+
 ## Quick start for assessors
 
 To regenerate every number, table, and figure in the report:

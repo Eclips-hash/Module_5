@@ -114,14 +114,12 @@ The notebook is organised into 20 numbered cells. Each has a short markdown narr
 
 ## Infrastructure
 
-The pipeline was developed and finalised on **Google Colab using the free CPU runtime** (typically Intel Xeon with \~12 GB RAM). I did not use Colab Pro or any cloud compute.
+The pipeline was developed and finalised on **Google Colab using the free CPU runtime**. I did not use Colab Pro or any cloud compute.
 
 The pipeline will also run on:
 
 - **Local CPU**, any modern laptop with ≥ 8 GB RAM; expect 30–45 minutes total runtime.  
 - **Local GPU**: not faster for this pipeline. XGBoost is CPU-bound at this dataset size on default settings, and `shap.TreeExplainer` does not use GPU.
-
-Memory usage peaks at around 4–5 GB during the XGBoost hyperparameter search (Cell 7), well within Colab's 12 GB limit.
 
 A note on parallelism: Cell 7 uses `n_jobs=-1` in `RandomizedSearchCV` to parallelise across CPU cores. This introduces tiny non-determinism in which configuration is selected (parallel workers can finish in different orders across runs). For byte-identical reproduction, change to `n_jobs=1`. Across multiple runs I confirmed the chosen best configuration was always within the same neighbourhood of the search grid, and the headline AUC-PR, Brier, and NNE numbers did not change in any clinically meaningful way.
 
